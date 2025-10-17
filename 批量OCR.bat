@@ -1,10 +1,8 @@
 @echo off
 chcp 65001 >nul
-echo ================================================================================
-echo PaddleOCR 模型转换工具
-echo ================================================================================
-echo.
-echo 这个工具会将 bfloat16 模型一次性转换为 float32，加快后续加载速度
+echo ====================================
+echo 批量 OCR 处理
+echo ====================================
 echo.
 
 REM 激活 conda 环境
@@ -22,16 +20,17 @@ if errorlevel 1 (
     echo 错误: 无法激活 paddle 环境
     echo 请确保已安装 conda 并且存在 paddle 环境
     echo.
-    pause
+    echo 按任意键退出...
+    pause >nul
     exit /b 1
 )
 
 echo paddle 环境已激活
 echo.
-pause
+
+python batch_ocr.py
+
 echo.
-python convert_models_once.py
-echo.
-echo ================================================================================
-echo.
-pause
+echo 按任意键退出...
+pause >nul
+
