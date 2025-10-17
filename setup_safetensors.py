@@ -109,9 +109,10 @@ class SafeOpenWrapper:
                         self.tensors[key] = paddle.to_tensor(tensor_data)
                 
                 if bfloat16_count > 0:
-                    print(f"  [转换] {bfloat16_count}/{tensor_count} 个张量从 bfloat16 转换为 float32")
+                    print(f"  [⚠ 警告] {bfloat16_count}/{tensor_count} 个张量需要从 bfloat16 转换为 float32")
+                    print(f"  [提示] 运行 'python convert_models_once.py' 一次性转换所有模型，加快后续加载速度")
                 else:
-                    print(f"  [完成] 加载了 {tensor_count} 个张量")
+                    print(f"  [完成] 加载了 {tensor_count} 个张量（已优化为 float32）")
             
             return self
         else:

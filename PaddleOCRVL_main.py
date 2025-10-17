@@ -14,7 +14,7 @@ print("正在初始化 PaddleOCRVL...")
 pipeline = PaddleOCRVL()
 
 print("正在执行 OCR 识别...\n")
-output = pipeline.predict("https://paddle-model-ecology.bj.bcebos.com/paddlex/imgs/demo_image/paddleocr_vl_demo.png")
+output = pipeline.predict(r"C:\Users\gotmo\Pictures\Screenshots\Snipaste_2025-10-09_14-21-01.png")
 
 print("="*80)
 print("识别结果:")
