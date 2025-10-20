@@ -1,6 +1,10 @@
-# PaddleOCR 安装指导
+# PaddleOCR CPU 安装指导
 
-本文档介绍如何从零开始安装和配置CPU版 PaddleOCR 环境。
+本文档介绍如何从零开始安装和配置CPU版 PaddleOCR 环境。因为我在Windows环境下配置PaddleOCR的Docker遇到了一些问题，于是就 Vibe Codeing 了这个项目。
+所有代码都是使用 Cursor Vibe Codeing 的，所以 CPU 跑起来的确是没有官方的 PP-OCRv5 使用 CPU版的 PyTroch 等等加速包跑得快的。
+官方的正确配置以后可以跑满100%的CPU，但是我的 Vibe Codeing 不能，虽然我尝试过使用CPU版的 PyTroch 来加速，但是报错太多我也就放弃了。
+加载模型或者说识别前的准备每一次启动都大概需要10-15分钟，如果识别的一张图片中的字数太多，识别的速度也会相应变慢，比如一页长文章需要5分钟，如果只有几句话的识别大概10秒左右就可以识别好。
+各位有兴趣可以继续 Vibe Codeing ，修改成支持CPU版的 PyTroch 加速。
 
 ## 📋 前置要求
 
