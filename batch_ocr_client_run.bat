@@ -1,13 +1,11 @@
 @echo off
 chcp 65001 >nul
 echo ========================================
-echo Start PaddleOCRVL Persistent Service
+echo Batch OCR Processing (Client Mode)
 echo ========================================
 echo.
-echo Note: Model initialization takes about 2 minutes
-echo       Service will keep running until manually stopped
-echo.
-echo Press Ctrl+C to stop service
+echo Note: Please make sure OCR service is running
+echo       Run 'start_ocr_service.bat' to start service
 echo.
 
 REM Activate conda environment
@@ -33,9 +31,9 @@ if errorlevel 1 (
 echo paddle environment activated
 echo.
 
-python ocr_server.py
+python batch_ocr_client.py
 
 echo.
-echo OCR service stopped
+echo Batch processing completed
 echo Press any key to exit...
 pause >nul

@@ -42,7 +42,7 @@ class PPOCRServer:
         """初始化PaddleOCRVL模型"""
         print("=" * 60)
         print("正在初始化 PaddleOCRVL 模型...")
-        print("这通常需要 10-15 分钟，请耐心等待...")
+        print("这通常需要 2 分钟，请耐心等待...")
         print("=" * 60)
 
         start_time = time.time()
@@ -75,6 +75,8 @@ class PPOCRServer:
 
             self.running = True
             print(f"\n🚀 PPOCR 服务已启动")
+            print(f"   把需要批处理的图片文件放到 OCR_Flies 目录下")
+            print(f"   然后双击 batch_ocr_client_run.bat - 批量处理")
             print(f"   监听地址: {self.host}:{self.port}")
             print(f"   等待客户端连接...")
             print(f"   按 Ctrl+C 停止服务\n")
@@ -104,6 +106,9 @@ class PPOCRServer:
     def handle_client(self, client_socket, client_address):
         """处理客户端请求"""
         try:
+            # 设置超时时间为30分钟
+            client_socket.settimeout(1800)
+
             while self.running:
                 # 接收请求数据
                 data = client_socket.recv(4096)

@@ -49,11 +49,17 @@ python ocr_client.py --status
 python ocr_client.py --shutdown
 ```
 
+### 批处理文件使用
+- 启动服务：双击 `start_ocr_service.bat`
+- 批量处理：双击 `batch_ocr_client_run.bat`
+- 停止服务：双击 `stop_ocr_service.bat`
+
 ## 性能数据
 
 **实际测试结果：**
 - 模型初始化：121.66秒（约2分钟）
 - 单张图片处理：80-260秒（1-4分钟，根据内容复杂度）
+- 如果被识别成带图片的类型的：平均10分钟
 
 **优势：** 模型只需一次加载，后续识别无需重复初始化
 
@@ -79,7 +85,7 @@ python convert_models_once.py
 ├── batch_ocr_client.py        # 批量处理客户端
 ├── start_ocr_service.bat      # 启动服务脚本
 ├── stop_ocr_service.bat       # 停止服务脚本
-├── 批量OCR客户端.bat           # 批量处理脚本
+├── batch_ocr_client_run.bat   # 批量处理脚本
 ├── convert_models_once.py     # 模型转换工具
 ├── setup_safetensors.py       # 兼容性补丁
 └── OCR_Flies/                 # 待识别图片目录
@@ -96,7 +102,7 @@ output/batch_results/图片名称/
 
 ## 注意事项
 
-1. **内存占用**：服务运行期间持续占用约2-4GB内存
+1. **内存占用**：服务运行期间持续占用约4GB内存
 2. **单实例**：同一台电脑只能运行一个OCR服务实例
 3. **网络连接**：客户端和服务端需要网络连接
 4. **性能提示**：当前配置在CPU上运行速度不如官方PP-OCRv5 CPU版

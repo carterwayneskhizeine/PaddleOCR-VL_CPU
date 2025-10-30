@@ -17,7 +17,7 @@ class PPOCRClient:
     def __init__(self, host='localhost', port=8888):
         self.host = host
         self.port = port
-        self.timeout = 300  # 5分钟超时
+        self.timeout = 1800  # 30分钟超时
 
     def _send_request(self, request: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """发送请求到服务器"""
