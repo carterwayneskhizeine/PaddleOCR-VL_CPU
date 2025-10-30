@@ -1,0 +1,225 @@
+{
+    "input_path": "D:\\Code\\PaddleOCR-VL_CPU\\OCR_Flies\\Snipaste_2025-10-26_16-54-22.png",
+    "page_index": null,
+    "model_settings": {
+        "use_doc_preprocessor": false,
+        "use_layout_detection": true,
+        "use_chart_recognition": false,
+        "format_block_content": false
+    },
+    "parsing_res_list": [
+        {
+            "block_label": "doc_title",
+            "block_content": "Types of Constants",
+            "block_bbox": [
+                386,
+                50,
+                840,
+                109
+            ],
+            "block_id": 0,
+            "block_order": 1
+        },
+        {
+            "block_label": "text",
+            "block_content": "const int CONSTANT_NAME = 50;",
+            "block_bbox": [
+                26,
+                556,
+                543,
+                592
+            ],
+            "block_id": 1,
+            "block_order": 2
+        },
+        {
+            "block_label": "text",
+            "block_content": "☑ You must initialize a constant.",
+            "block_bbox": [
+                50,
+                455,
+                428,
+                486
+            ],
+            "block_id": 2,
+            "block_order": 3
+        },
+        {
+            "block_label": "text",
+            "block_content": "● Literal Constants: Temporary & not stored in the same way that we store variables.",
+            "block_bbox": [
+                5,
+                131,
+                1063,
+                167
+            ],
+            "block_id": 3,
+            "block_order": 4
+        },
+        {
+            "block_label": "text",
+            "block_content": "We cannot assign (write) to a constant - the value that it is initialized to will persist.",
+            "block_bbox": [
+                50,
+                506,
+                1023,
+                539
+            ],
+            "block_id": 4,
+            "block_order": 5
+        },
+        {
+            "block_label": "text",
+            "block_content": "cout << 55 << endl; //55 is a literal constant",
+            "block_bbox": [
+                36,
+                184,
+                858,
+                221
+            ],
+            "block_id": 5,
+            "block_order": 6
+        },
+        {
+            "block_label": "paragraph_title",
+            "block_content": "☑ Declared Constants:",
+            "block_bbox": [
+                6,
+                266,
+                292,
+                300
+            ],
+            "block_id": 6,
+            "block_order": 7
+        },
+        {
+            "block_label": "text",
+            "block_content": "☑ Constants have names/identifiers and are stored in memory just like variables.",
+            "block_bbox": [
+                49,
+                319,
+                973,
+                353
+            ],
+            "block_id": 7,
+            "block_order": 8
+        },
+        {
+            "block_label": "text",
+            "block_content": "We use the keyword const to declare a constant (const instructs the compiler to make the variable'read-only').",
+            "block_bbox": [
+                49,
+                370,
+                1138,
+                438
+            ],
+            "block_id": 8,
+            "block_order": 9
+        }
+    ],
+    "layout_det_res": {
+        "input_path": null,
+        "page_index": null,
+        "boxes": [
+            {
+                "cls_id": 6,
+                "label": "doc_title",
+                "score": 0.7463610172271729,
+                "coordinate": [
+                    386.0640869140625,
+                    50.188018798828125,
+                    840.09130859375,
+                    109.71231079101562
+                ]
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.6556758880615234,
+                "coordinate": [
+                    26.280548095703125,
+                    556.107421875,
+                    543.128173828125,
+                    592.953125
+                ]
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9293778538703918,
+                "coordinate": [
+                    50.46141052246094,
+                    455.64385986328125,
+                    428.3592529296875,
+                    486.50054931640625
+                ]
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.6877725124359131,
+                "coordinate": [
+                    5.8074951171875,
+                    131.60098266601562,
+                    1063.5224609375,
+                    167.09359741210938
+                ]
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9473817348480225,
+                "coordinate": [
+                    50.094146728515625,
+                    506.035888671875,
+                    1023.8731689453125,
+                    539.737548828125
+                ]
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.7210026979446411,
+                "coordinate": [
+                    36.3701171875,
+                    184.81838989257812,
+                    858.8175659179688,
+                    221.66494750976562
+                ]
+            },
+            {
+                "cls_id": 17,
+                "label": "paragraph_title",
+                "score": 0.6396495699882507,
+                "coordinate": [
+                    6.184967041015625,
+                    266.68707275390625,
+                    292.8687744140625,
+                    300.04351806640625
+                ]
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9455541968345642,
+                "coordinate": [
+                    49.029205322265625,
+                    319.705810546875,
+                    973.072265625,
+                    353.22137451171875
+                ]
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.9698690176010132,
+                "coordinate": [
+                    49.98211669921875,
+                    370.06201171875,
+                    1138.479248046875,
+                    438.42333984375
+                ]
+            }
+        ]
+    }
+}

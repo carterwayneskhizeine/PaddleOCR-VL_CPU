@@ -1,143 +1,108 @@
 # PaddleOCR CPU 环境安装与配置指南
 
-本文档介绍如何从零开始安装和配置 CPU 版 PaddleOCR-V L 环境。
+## 项目概述
 
-## 项目背景
+CPU 版 PaddleOCR-VL 项目，使用客户端-服务器架构，模型只需一次加载，避免重复初始化。
 
-在 Windows 环境下配置 PaddleOCR 的 Docker 遇到了一些问题，因此通过 Vibe Coding 创建了这个项目。
+## 安装步骤
 
-## 技术说明
-
-- 所有代码都是使用 Cursor Vibe Coding 生成的
-- **性能提示**：当前配置在 CPU 上运行速度远远不如官方的 PP-OCRv5 CPU 版
-- 官方正确配置可以跑满 100% 的 CPU，但当前 Vibe 编码版本无法达到相同性能水平
-
-## 性能表现
-
-### 启动时间
-- 每次启动时，加载模型和识别前的准备工作需要 **10-15 分钟**
-
-### 识别速度
-- **少量文字**：只有几句话的识别大约需要 **10 秒**
-- **大量文字**：一页长文章的识别需要 **5 分钟左右**
-- 识别速度与图片中的字数成正比
-
-## 已知限制
-
-曾尝试使用 GPU 版的 PyTorch 来加速，但由于报错过多而放弃。
-
-
-
-## 📋 前置要求
-
-- 已安装 Anaconda 或 Miniconda
-- Python 3.12
-- Windows/Linux/MacOS 操作系统
-
-## 🚀 安装步骤
-
-### 1. 创建 Conda 虚拟环境
-
-打开命令行工具（Windows 用户推荐使用 Anaconda Prompt），执行以下命令创建名为 `paddle` 的 Python 3.12 环境：
-
+### 1. 创建 Conda 环境
 ```bash
 conda create --name paddle python=3.12
-```
-
-按提示输入 `y` 确认安装。
-
-### 2. 激活虚拟环境
-
-创建完成后，激活该环境：
-
-```bash
 conda activate paddle
 ```
 
-**注意**：后续所有操作都需要在激活 paddle 环境后进行。
-
-### 3. 安装 PaddlePaddle
-
-安装 PaddlePaddle 3.2.0 版本（CPU 版本）：
-
+### 2. 安装依赖
 ```bash
-python -m pip install paddlepaddle==3.2.0 -i https://www.paddlepaddle.org.cn/packages/stable/cpu/
-```
-
-**说明**：
-- 使用 `-i` 参数指定国内镜像源，下载速度更快
-- 此为 CPU 版本，适用于大多数场景
-- 如需 GPU 版本，请参考 [PaddlePaddle 官方文档](https://www.paddlepaddle.org.cn/)
-
-### 4. 安装 PaddleOCR
-
-安装 PaddleOCR 及其所有依赖：
-
-```bash
+python -m pip install paddlepaddle==3.2.1 -i https://www.paddlepaddle.org.cn/packages/stable/cpu/
 python -m pip install "paddleocr[all]"
 ```
 
-**说明**：
-- `[all]` 会安装所有可选依赖，包括 PDF 解析、表格识别等功能
-- 如果只需基础功能，可以使用：`pip install paddleocr`
-
-### 5. 验证安装
-
-验证安装是否成功：
-
+### 3. 验证安装
 ```bash
 python -c "from paddleocr import PaddleOCR; print('PaddleOCR 安装成功！')"
 ```
 
-如果没有报错，说明安装成功。
+## 使用方式
 
-## 📚 本项目使用说明
+### 启动服务
+```bash
+# 命令行启动
+python ocr_server.py
 
-本项目提供了批量 OCR 处理功能：
+# 或双击批处理文件
+start_ocr_service.bat
+```
 
-### 使用方法
+### 使用OCR
+```bash
+# 单张图片识别
+python ocr_client.py 图片路径.jpg
 
-1. 将需要识别的图片放入 `OCR_Flies` 文件夹
-2. 双击运行 `批量OCR.bat`（Windows）
-3. 等待处理完成，结果保存在 `output/batch_results` 文件夹
+# 批量处理，把需要处理的图片都放在OCR_Flies文件夹中
+python batch_ocr_client.py
 
-详细使用说明请参阅 [批量OCR使用说明.md](./批量OCR使用说明.md)
+# 查看服务状态
+python ocr_client.py --status
 
-## 🔗 相关链接
+# 停止服务
+python ocr_client.py --shutdown
+```
 
-### 官方资源
+## 性能数据
 
-- **PaddleOCR GitHub**: https://github.com/PaddlePaddle/PaddleOCR
-- **PaddleOCR 官网**: https://www.paddleocr.ai
-- **PaddlePaddle 官网**: https://www.paddlepaddle.org.cn
-- **官方文档**: https://github.com/PaddlePaddle/PaddleOCR/blob/main/README_ch.md
+**实际测试结果：**
+- 模型初始化：121.66秒（约2分钟）
+- 单张图片处理：80-260秒（1-4分钟，根据内容复杂度）
 
-### 功能特性
+**优势：** 模型只需一次加载，后续识别无需重复初始化
 
-- ✅ 支持 100+ 种语言的 OCR 识别
-- ✅ PP-OCRv5 - 最新的高精度 OCR 模型
-- ✅ PP-StructureV3 - 文档结构分析
-- ✅ PP-ChatOCRv4 - 文档问答
-- ✅ PaddleOCR-VL - 视觉语言模型
-- ✅ 表格识别、版面分析、公式识别等
+## 模型转换
 
-## 💡 技术支持
+### 一键转换 bfloat16 到 float32
 
-如遇到问题，可以通过以下方式获取帮助：
+```bash
+python convert_models_once.py
+```
 
-1. 查看 [PaddleOCR FAQ](https://github.com/PaddlePaddle/PaddleOCR/blob/main/doc/doc_ch/FAQ.md)
-2. 在 [GitHub Issues](https://github.com/PaddlePaddle/PaddleOCR/issues) 搜索或提问
-3. 加入 PaddlePaddle 技术交流群（见官网）
+**转换效果：**
+- 消除运行时转换开销
+- 提升后续加载速度
+- 原始文件自动备份为 `.bak`
 
-## 📝 更新日志
+## 文件结构
 
-- **2025-10** - 创建本安装指导文档
-- **2025-10** - PaddlePaddle 3.2.0 版本
-- **2024-10** - PP-OCRv5 发布
+```
+项目根目录/
+├── ocr_server.py              # 持久化服务端
+├── ocr_client.py              # OCR客户端
+├── batch_ocr_client.py        # 批量处理客户端
+├── start_ocr_service.bat      # 启动服务脚本
+├── stop_ocr_service.bat       # 停止服务脚本
+├── 批量OCR客户端.bat           # 批量处理脚本
+├── convert_models_once.py     # 模型转换工具
+├── setup_safetensors.py       # 兼容性补丁
+└── OCR_Flies/                 # 待识别图片目录
+```
 
----
+## 输出结果
 
-**祝你使用愉快！** 🎉
+每个图片的识别结果保存在独立文件夹中：
+```
+output/batch_results/图片名称/
+├── result.json  # 结构化数据
+└── result.md    # 文本结果
+```
 
-如有任何问题或建议，欢迎反馈。
+## 注意事项
 
+1. **内存占用**：服务运行期间持续占用约2-4GB内存
+2. **单实例**：同一台电脑只能运行一个OCR服务实例
+3. **网络连接**：客户端和服务端需要网络连接
+4. **性能提示**：当前配置在CPU上运行速度不如官方PP-OCRv5 CPU版
+
+## 相关链接
+
+- [PaddleOCR GitHub](https://github.com/PaddlePaddle/PaddleOCR)
+- [PaddleOCR 官网](https://www.paddleocr.ai)
+- [PaddlePaddle 官网](https://www.paddlepaddle.org.cn)

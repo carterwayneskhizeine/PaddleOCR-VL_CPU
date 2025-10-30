@@ -1,0 +1,170 @@
+(base) C:\Users\gotmo>conda activate paddle
+
+(paddle) D:\>cd D:\Code\PaddleOCR-VL_CPU
+
+(paddle) D:\Code\PaddleOCR-VL_CPU>python ocr_server.py
+信息: 用提供的模式无法找到文件。
+C:\Users\gotmo\.conda\envs\paddle\Lib\site-packages\paddle\utils\cpp_extension\extension_utils.py:718: UserWarning: No ccache found. Please be aware that recompiling all source files may be required. You can download and install ccache from: https://github.com/ccache/ccache/blob/master/doc/INSTALL.md
+  warnings.warn(warning_message)
+[OK] 已应用 safetensors 兼容性补丁
+     - 支持 framework='paddle' 参数
+     - 自动转换 bfloat16 -> float32
+
+============================================================
+PaddleOCRVL 持久化服务器
+============================================================
+============================================================
+正在初始化 PaddleOCRVL 模型...
+这通常需要 10-15 分钟，请耐心等待...
+============================================================
+Creating model: ('PP-DocLayoutV2', None)
+Model files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\gotmo\.paddlex\official_models\PP-DocLayoutV2`.
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1030 15:16:11.959601 16004 onednn_context.cc:81] oneDNN v3.6.2
+Creating model: ('PaddleOCR-VL-0.9B', None)
+Model files already exist. Using cached files. To redownload, please delete the directory manually: `C:\Users\gotmo\.paddlex\official_models\PaddleOCR-VL`.
+Loading configuration file C:\Users\gotmo\.paddlex\official_models\PaddleOCR-VL\PaddleOCR-VL-0.9B\config.json
+Loading weights file C:\Users\gotmo\.paddlex\official_models\PaddleOCR-VL\PaddleOCR-VL-0.9B\model.safetensors
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+use GQA - num_heads: 16- num_key_value_heads: 2
+C:\Users\gotmo\.conda\envs\paddle\Lib\site-packages\paddle\utils\decorator_utils.py:420: Warning:
+Non compatible API. Please refer to https://www.paddlepaddle.org.cn/documentation/docs/en/develop/guides/model_convert/convert_from_pytorch/api_difference/torch/torch.split.html first.
+  warnings.warn(
+  [加载中] 加载模型权重: C:\Users\gotmo\.paddlex\official_models\PaddleOCR-VL\PaddleOCR-VL-0.9B\model.safetensors
+  [完成] 加载了 620 个张量（已优化为 float32）
+  [加载中] 加载模型权重: C:\Users\gotmo\.paddlex\official_models\PaddleOCR-VL\PaddleOCR-VL-0.9B\model.safetensors
+  [完成] 加载了 620 个张量（已优化为 float32）
+Loaded weights file from disk, setting weights to model.
+All model checkpoint weights were used when initializing PaddleOCRVLForConditionalGeneration.
+
+All the weights of PaddleOCRVLForConditionalGeneration were initialized from the model checkpoint at C:\Users\gotmo\.paddlex\official_models\PaddleOCR-VL\PaddleOCR-VL-0.9B.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use PaddleOCRVLForConditionalGeneration for predictions without further training.
+Loading configuration file C:\Users\gotmo\.paddlex\official_models\PaddleOCR-VL\PaddleOCR-VL-0.9B\generation_config.json
+Currently, the PaddleOCR-VL-0.9B local model only supports batch size of 1. The batch size will be updated to 1.
+============================================================
+✅ 模型初始化完成！
+   耗时: 121.66 秒
+   模型已加载并保持挂载状态
+   可以随时通过客户端进行OCR识别
+============================================================
+
+🚀 PPOCR 服务已启动
+   监听地址: localhost:8888
+   等待客户端连接...
+   按 Ctrl+C 停止服务
+   
+📡 客户端连接: ('127.0.0.1', 6926)
+🔍 开始OCR识别: Snipaste_2025-10-25_17-19-02.png
+I1030 15:23:07.687047 24984 onednn_context.cc:81] oneDNN v3.6.2
+C:\Users\gotmo\.conda\envs\paddle\Lib\site-packages\paddle\tensor\creation.py:1088: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach(), rather than paddle.to_tensor(sourceTensor).
+  return tensor(
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+C:\Users\gotmo\.conda\envs\paddle\Lib\site-packages\paddle\utils\decorator_utils.py:420: Warning:
+Non compatible API. Please refer to https://www.paddlepaddle.org.cn/documentation/docs/en/develop/guides/model_convert/convert_from_pytorch/api_difference/torch/torch.max.html first.
+  warnings.warn(
+✅ OCR完成，耗时: 99.08 秒
+🔌 客户端断开连接: ('127.0.0.1', 6926)
+📡 客户端连接: ('127.0.0.1', 5989)
+🔍 开始OCR识别: Snipaste_2025-10-26_16-54-22.png
+I1030 15:24:45.968907 35804 onednn_context.cc:81] oneDNN v3.6.2
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+✅ OCR完成，耗时: 259.50 秒
+🔌 客户端断开连接: ('127.0.0.1', 5989)
+📡 客户端连接: ('127.0.0.1', 3152)
+🔍 开始OCR识别: Snipaste_2025-10-26_16-55-41.png
+I1030 15:29:05.465725 31492 onednn_context.cc:81] oneDNN v3.6.2
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+✅ OCR完成，耗时: 237.18 秒
+🔌 客户端断开连接: ('127.0.0.1', 3152)
+📡 客户端连接: ('127.0.0.1', 4861)
+🔍 开始OCR识别: Snipaste_2025-10-29_15-57-28.png
+I1030 15:33:02.666579 35468 onednn_context.cc:81] oneDNN v3.6.2
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+✅ OCR完成，耗时: 80.98 秒
+🔌 客户端断开连接: ('127.0.0.1', 4861)
+📡 客户端连接: ('127.0.0.1', 5984)
+🔍 开始OCR识别: Snipaste_2025-10-29_16-13-03.png
+I1030 15:34:23.672571 29700 onednn_context.cc:81] oneDNN v3.6.2
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+✅ OCR完成，耗时: 82.21 秒
+🔌 客户端断开连接: ('127.0.0.1', 5984)
+   
+
+
+PowerShell 7.5.4
+Loading personal and system profiles took 4919ms.
+(base) PS C:\Users\gotmo> conda activate paddle
+(paddle) PS C:\Users\gotmo> cd D:\Code\PaddleOCR-VL_CPU
+(paddle) PS D:\Code\PaddleOCR-VL_CPU> python batch_ocr_client.py
+================================================================================
+批量 OCR 处理开始 (客户端模式)
+================================================================================
+
+📡 正在连接OCR服务器...
+✅ OCR服务器连接成功
+   地址: localhost:8888
+   模型状态: 🟢 已加载
+
+找到 5 个图片文件:
+  1. Snipaste_2025-10-25_17-19-02.png
+  2. Snipaste_2025-10-26_16-54-22.png
+  3. Snipaste_2025-10-26_16-55-41.png
+  4. Snipaste_2025-10-29_15-57-28.png
+  5. Snipaste_2025-10-29_16-13-03.png
+
+开始批量处理...
+--------------------------------------------------------------------------------
+
+[1/5] 处理中: Snipaste_2025-10-25_17-19-02.png
+  ✓ 完成
+
+[2/5] 处理中: Snipaste_2025-10-26_16-54-22.png
+  ✓ 完成
+
+[3/5] 处理中: Snipaste_2025-10-26_16-55-41.png
+  ✓ 完成
+
+[4/5] 处理中: Snipaste_2025-10-29_15-57-28.png
+  ✓ 完成
+
+[5/5] 处理中: Snipaste_2025-10-29_16-13-03.png
+  ✓ 完成
+
+================================================================================
+批量处理完成
+================================================================================
+
+总文件数: 5
+成功: 5
+失败: 0
+总耗时: 759.07 秒
+平均每张: 151.81 秒
+
+结果保存在: D:\Code\PaddleOCR-VL_CPU\output\batch_results

@@ -1,0 +1,52 @@
+{
+    "input_path": "D:\\Code\\PaddleOCR-VL_CPU\\OCR_Flies\\Snipaste_2025-10-25_17-19-02.png",
+    "page_index": null,
+    "model_settings": {
+        "use_doc_preprocessor": false,
+        "use_layout_detection": true,
+        "use_chart_recognition": false,
+        "format_block_content": false
+    },
+    "parsing_res_list": [
+        {
+            "block_label": "algorithm",
+            "block_content": "#include <iostream>\nusing namespace std;\n\nint main()\n{\n    float tax, taxRate, price;\n    taxRate = 0.15;\n    cout << \"Enter the price:\" << endl;\n    cin >> price;\n    tax = taxRate * price;\n    cout << endl << \"The Tax is: \" << tax << endl;\n    return 0;\n}",
+            "block_bbox": [
+                16,
+                0,
+                705,
+                498
+            ],
+            "block_id": 0,
+            "block_order": 1
+        }
+    ],
+    "layout_det_res": {
+        "input_path": null,
+        "page_index": null,
+        "boxes": [
+            {
+                "cls_id": 2,
+                "label": "aside_text",
+                "score": 0.5245436429977417,
+                "coordinate": [
+                    7.043275833129883,
+                    0,
+                    39.811859130859375,
+                    492.49908447265625
+                ]
+            },
+            {
+                "cls_id": 1,
+                "label": "algorithm",
+                "score": 0.8901188969612122,
+                "coordinate": [
+                    16.620697021484375,
+                    0,
+                    705.721435546875,
+                    498.36004638671875
+                ]
+            }
+        ]
+    }
+}

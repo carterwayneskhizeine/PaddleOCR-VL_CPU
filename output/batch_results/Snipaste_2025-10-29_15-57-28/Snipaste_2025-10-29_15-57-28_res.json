@@ -1,0 +1,85 @@
+{
+    "input_path": "D:\\Code\\PaddleOCR-VL_CPU\\OCR_Flies\\Snipaste_2025-10-29_15-57-28.png",
+    "page_index": null,
+    "model_settings": {
+        "use_doc_preprocessor": false,
+        "use_layout_detection": true,
+        "use_chart_recognition": false,
+        "format_block_content": false
+    },
+    "parsing_res_list": [
+        {
+            "block_label": "table",
+            "block_content": "<table><tr><td>写法</td><td>类型</td><td>例子</td></tr><tr><td>5</td><td>int (整数)</td><td>int x = 5;</td></tr><tr><td>5U 或 5u</td><td>unsigned int</td><td>unsigned int x = 5U;</td></tr><tr><td>33.05f 或 33.05F</td><td>float (浮点数)</td><td>float x = 33.05f;</td></tr><tr><td>33.05</td><td>double (双精度)</td><td>double x = 33.05;</td></tr><tr><td>4L 或 4L</td><td>long int</td><td>long x = 4L;</td></tr></table>",
+            "block_bbox": [
+                11,
+                10,
+                1006,
+                258
+            ],
+            "block_id": 0,
+            "block_order": null
+        }
+    ],
+    "layout_det_res": {
+        "input_path": null,
+        "page_index": null,
+        "boxes": [
+            {
+                "cls_id": 21,
+                "label": "table",
+                "score": 0.9721091389656067,
+                "coordinate": [
+                    11.99609375,
+                    10.264396667480469,
+                    1006.6592407226562,
+                    258.4322814941406
+                ]
+            },
+            {
+                "cls_id": 15,
+                "label": "inline_formula",
+                "score": 0.5032905340194702,
+                "coordinate": [
+                    662.0576171875,
+                    59.604759216308594,
+                    738.2666015625,
+                    83.88025665283203
+                ]
+            },
+            {
+                "cls_id": 15,
+                "label": "inline_formula",
+                "score": 0.5608154535293579,
+                "coordinate": [
+                    686.5787353515625,
+                    142.771240234375,
+                    820.3299560546875,
+                    166.25799560546875
+                ]
+            },
+            {
+                "cls_id": 15,
+                "label": "inline_formula",
+                "score": 0.4768119752407074,
+                "coordinate": [
+                    769.8621826171875,
+                    101.87399291992188,
+                    856.3328857421875,
+                    125.36727905273438
+                ]
+            },
+            {
+                "cls_id": 15,
+                "label": "inline_formula",
+                "score": 0.42429178953170776,
+                "coordinate": [
+                    618.9174194335938,
+                    224.52452087402344,
+                    764.0598754882812,
+                    250.0252227783203
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,129 @@
+{
+    "input_path": "D:\\Code\\PaddleOCR-VL_CPU\\OCR_Flies\\Snipaste_2025-10-29_16-13-03.png",
+    "page_index": null,
+    "model_settings": {
+        "use_doc_preprocessor": false,
+        "use_layout_detection": true,
+        "use_chart_recognition": false,
+        "format_block_content": false
+    },
+    "parsing_res_list": [
+        {
+            "block_label": "table",
+            "block_content": "<table><tr><td>场景</td><td>✗ 错误</td><td>✓ 正确</td></tr><tr><td>声明float</td><td>float x = 3.14;</td><td>float x = 3.14f;</td></tr><tr><td>比较相等</td><td>if (a == b)</td><td>if (fabs(a - b) &lt; 0.0001)</td></tr><tr><td>整数除法</td><td>int a = 7/2;</td><td>double a = 7.0/2.0;</td></tr><tr><td>大数计算</td><td>float big = 1e9;</td><td>double big = 1e9;</td></tr><tr><td>金融计算</td><td>float money</td><td>double money</td></tr></table>",
+            "block_bbox": [
+                6,
+                5,
+                998,
+                262
+            ],
+            "block_id": 0,
+            "block_order": null
+        }
+    ],
+    "layout_det_res": {
+        "input_path": null,
+        "page_index": null,
+        "boxes": [
+            {
+                "cls_id": 15,
+                "label": "inline_formula",
+                "score": 0.5833479166030884,
+                "coordinate": [
+                    183.94618225097656,
+                    55.30810546875,
+                    364.851806640625,
+                    79.87570190429688
+                ]
+            },
+            {
+                "cls_id": 15,
+                "label": "inline_formula",
+                "score": 0.5446126461029053,
+                "coordinate": [
+                    602.3189697265625,
+                    55.645145416259766,
+                    725.3541259765625,
+                    79.55615234375
+                ]
+            },
+            {
+                "cls_id": 21,
+                "label": "table",
+                "score": 0.9798085689544678,
+                "coordinate": [
+                    6.10107421875,
+                    5.0731353759765625,
+                    998.532958984375,
+                    262.94805908203125
+                ]
+            },
+            {
+                "cls_id": 15,
+                "label": "inline_formula",
+                "score": 0.5396084189414978,
+                "coordinate": [
+                    182.5272216796875,
+                    94.09909057617188,
+                    316.56060791015625,
+                    119.90037536621094
+                ]
+            },
+            {
+                "cls_id": 15,
+                "label": "inline_formula",
+                "score": 0.5797665119171143,
+                "coordinate": [
+                    229.00189208984375,
+                    136.30113220214844,
+                    328.85986328125,
+                    162.1624298095703
+                ]
+            },
+            {
+                "cls_id": 15,
+                "label": "inline_formula",
+                "score": 0.6488844156265259,
+                "coordinate": [
+                    533.2804565429688,
+                    94.50355529785156,
+                    808.1296997070312,
+                    120.73204040527344
+                ]
+            },
+            {
+                "cls_id": 15,
+                "label": "inline_formula",
+                "score": 0.658942699432373,
+                "coordinate": [
+                    533.46875,
+                    136.1913604736328,
+                    762.279296875,
+                    162.4576873779297
+                ]
+            },
+            {
+                "cls_id": 15,
+                "label": "inline_formula",
+                "score": 0.5134943127632141,
+                "coordinate": [
+                    183.02761840820312,
+                    177.4319305419922,
+                    376.8231506347656,
+                    203.8286895751953
+                ]
+            },
+            {
+                "cls_id": 15,
+                "label": "inline_formula",
+                "score": 0.5587440729141235,
+                "coordinate": [
+                    533.4788818359375,
+                    177.27975463867188,
+                    738.497802734375,
+                    203.97109985351562
+                ]
+            }
+        ]
+    }
+}
